@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Maa Chandrika Mahila Mahavidyalaya — Mahoba</title>
+<meta name="description" content="Maa Chandrika Mahila Mahavidyalaya — a private women's college in Mahoba (U.P.) offering B.A., B.Sc., M.A. and D.El.Ed. programs in a nurturing campus." />
+<link rel="icon" href="/__l5e/assets-v1/17dc6215-afc2-4407-82be-af0f05baaf20/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+  --rose:#b53261; --rose-dk:#8c1f48; --gold:#d4a24a; --gold-dk:#a87a25;
+  --cream:#fdf8f1; --ink:#2a1a23; --muted:#6b5a64; --line:#ecdfe4;
+  --shadow:0 12px 40px rgba(140,31,72,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;color:var(--rose-dk)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:999px;font-weight:600;font-size:.95rem;cursor:pointer;border:none;transition:all .25s ease;font-family:inherit}
+.btn-primary{background:linear-gradient(135deg,var(--rose),var(--rose-dk));color:#fff;box-shadow:0 8px 22px rgba(181,50,97,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(181,50,97,.45)}
+.btn-outline{background:transparent;color:#fff;border:2px solid #fff}
+.btn-outline:hover{background:#fff;color:var(--rose-dk)}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-dk));color:#fff}
+.btn-ghost{background:#fff;color:var(--rose-dk);border:1px solid var(--line)}
+.btn-ghost:hover{background:var(--cream)}
+.btn-danger{background:#dc2626;color:#fff}
+.btn-sm{padding:8px 16px;font-size:.85rem}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:all .3s}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;max-width:1300px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:46px;width:46px;object-fit:contain}
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-text strong{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--rose-dk)}
+.brand-text span{font-size:.72rem;color:var(--muted);letter-spacing:.5px}
+.nav-links{display:flex;gap:6px;align-items:center}
+.nav-links a{padding:8px 14px;border-radius:999px;font-size:.92rem;font-weight:500;color:var(--ink);cursor:pointer;transition:all .2s}
+.nav-links a:hover,.nav-links a.active{background:var(--cream);color:var(--rose-dk)}
+.nav-links .nav-cta{background:linear-gradient(135deg,var(--rose),var(--rose-dk));color:#fff;padding:10px 20px;font-weight:600}
+.nav-links .nav-cta:hover{background:var(--rose-dk);color:#fff;transform:translateY(-1px)}
+.hamburger{display:none;background:none;border:none;font-size:1.5rem;color:var(--rose-dk);cursor:pointer}
+
+/* PAGE wrappers */
+.page{display:none;padding-top:74px}
+.page.active{display:block}
+
+/* HERO */
+.hero{position:relative;height:92vh;min-height:580px;overflow:hidden;color:#fff}
+.hero-slides{position:absolute;inset:0}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease-in-out;transform:scale(1.05)}
+.hero-slide.active{opacity:1}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(140,31,72,.72) 0%,rgba(42,26,35,.55) 60%,rgba(0,0,0,.45) 100%);z-index:1}
+.hero-logo{position:absolute;top:96px;left:32px;z-index:3;background:rgba(255,255,255,.95);border-radius:50%;padding:8px;width:96px;height:96px;display:grid;place-items:center;box-shadow:var(--shadow)}
+.hero-logo img{width:80px;height:80px;object-fit:contain}
+.hero-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 24px;max-width:900px;margin:0 auto}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);padding:8px 18px;border-radius:999px;font-size:.85rem;font-weight:500;margin-bottom:20px}
+.hero h1{font-size:clamp(2rem,5.5vw,4rem);color:#fff;font-weight:800;margin-bottom:16px;text-shadow:0 4px 20px rgba(0,0,0,.4)}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p.lead{font-size:clamp(1rem,1.6vw,1.2rem);max-width:680px;margin-bottom:32px;color:rgba(255,255,255,.95)}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.hero-rating{margin-top:36px;display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.25);backdrop-filter:blur(8px);padding:10px 20px;border-radius:999px;border:1px solid rgba(255,255,255,.2)}
+.hero-rating .stars{color:#ffd566}
+.hero-rating span{font-size:.9rem;font-weight:500}
+.hero-dots{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
+.hero-dots button{width:32px;height:4px;border-radius:4px;border:none;background:rgba(255,255,255,.4);cursor:pointer;transition:background .3s}
+.hero-dots button.active{background:var(--gold)}
+
+/* SECTION */
+section.block{padding:80px 0}
+.block-head{text-align:center;max-width:680px;margin:0 auto 50px}
+.eyebrow{color:var(--rose);font-weight:600;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.block-head h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:14px}
+.block-head p{color:var(--muted)}
+
+/* DIRECTOR'S MESSAGE */
+.director{background:linear-gradient(135deg,#fff,var(--cream))}
+.director-card{display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:center;background:#fff;border-radius:24px;padding:40px;box-shadow:var(--shadow);border:1px solid var(--line);position:relative;overflow:hidden}
+.director-card::before{content:'\201C';position:absolute;top:-30px;right:30px;font-family:'Playfair Display',serif;font-size:14rem;color:var(--gold);opacity:.15;line-height:1}
+.director-photo{width:260px;height:320px;border-radius:18px;object-fit:cover;background:linear-gradient(135deg,var(--rose),var(--gold));box-shadow:0 14px 40px rgba(140,31,72,.25)}
+.director-photo-fallback{width:260px;height:320px;border-radius:18px;background:linear-gradient(135deg,var(--rose),var(--gold));display:grid;place-items:center;color:#fff;font-size:4rem;box-shadow:0 14px 40px rgba(140,31,72,.25)}
+.director-body{position:relative;z-index:1}
+.director-body h3{font-size:1.8rem;margin-bottom:4px}
+.director-body .designation{color:var(--rose);font-weight:600;font-size:.95rem;margin-bottom:18px}
+.director-body p.message{font-size:1.05rem;color:var(--ink);font-style:italic;line-height:1.8;position:relative;padding-left:24px;border-left:3px solid var(--gold)}
+
+/* COURSES */
+.courses{background:#fff}
+.course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.course-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px 28px;transition:all .3s;position:relative;overflow:hidden}
+.course-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--rose),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.course-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.course-card:hover::before{transform:scaleX(1)}
+.course-icon{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--rose),var(--rose-dk));display:grid;place-items:center;color:#fff;font-size:1.4rem;margin-bottom:20px}
+.course-card h3{font-size:1.4rem;margin-bottom:8px;color:var(--rose-dk)}
+.course-card .course-sub{color:var(--gold-dk);font-weight:600;font-size:.9rem;margin-bottom:14px}
+.course-card p{color:var(--muted);font-size:.95rem}
+
+/* NOTICE TICKER */
+.ticker-block{background:linear-gradient(135deg,var(--rose-dk),var(--rose));color:#fff;padding:30px 0}
+.ticker-wrap{display:flex;align-items:center;gap:20px;max-width:1200px;margin:0 auto;padding:0 24px}
+.ticker-label{background:var(--gold);color:#fff;padding:10px 20px;border-radius:999px;font-weight:700;font-size:.85rem;display:flex;align-items:center;gap:8px;flex-shrink:0;text-transform:uppercase;letter-spacing:1px}
+.ticker-label i{animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.ticker-track{flex:1;overflow:hidden;position:relative;mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.ticker-strip{display:flex;gap:50px;animation:scroll 40s linear infinite;white-space:nowrap}
+.ticker-strip:hover{animation-play-state:paused}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{display:inline-flex;align-items:center;gap:10px;font-size:.95rem}
+.ticker-item .date{background:rgba(255,255,255,.2);padding:3px 10px;border-radius:6px;font-size:.78rem;font-weight:600}
+.ticker-cta{flex-shrink:0}
+
+/* FEATURES */
+.features{background:var(--cream)}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.feature{text-align:center;padding:24px}
+.feature i{font-size:2.2rem;color:var(--rose);margin-bottom:16px}
+.feature h4{font-size:1.15rem;color:var(--ink);margin-bottom:8px;font-family:'Poppins',sans-serif;font-weight:600}
+.feature p{color:var(--muted);font-size:.92rem}
+
+/* CTA */
+.cta-band{background:linear-gradient(135deg,var(--rose),var(--rose-dk));color:#fff;padding:60px 24px;text-align:center}
+.cta-band h2{color:#fff;font-size:2rem;margin-bottom:14px}
+.cta-band p{margin-bottom:24px;opacity:.95}
+
+/* FOOTER */
+footer{background:#1d1218;color:#cdb7c2;padding:60px 0 24px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+footer h5{color:#fff;font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:16px}
+footer ul{list-style:none}
+footer li{margin-bottom:8px;font-size:.92rem}
+footer li a{cursor:pointer;transition:color .2s}
+footer li a:hover{color:var(--gold)}
+footer .foot-brand{display:flex;gap:14px;margin-bottom:16px;align-items:center}
+footer .foot-brand img{width:54px;height:54px;background:#fff;border-radius:50%;padding:4px}
+.foot-bottom{border-top:1px solid #3a262f;padding-top:20px;text-align:center;font-size:.85rem;color:#8a7682}
+
+/* GENERIC PAGE */
+.page-hero{background:linear-gradient(135deg,var(--rose),var(--rose-dk));color:#fff;padding:70px 24px;text-align:center}
+.page-hero h1{color:#fff;font-size:clamp(2rem,4vw,3rem)}
+.page-hero p{margin-top:10px;opacity:.92}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about-grid img{border-radius:18px;box-shadow:var(--shadow);width:100%;height:420px;object-fit:cover}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-top:40px}
+.stat{background:#fff;border-radius:14px;padding:24px;text-align:center;border:1px solid var(--line)}
+.stat .num{font-size:2rem;font-weight:700;color:var(--rose-dk);font-family:'Playfair Display',serif}
+.stat .lbl{color:var(--muted);font-size:.88rem}
+
+/* ADMISSION */
+.admission-status{background:#fff;border-radius:20px;padding:40px;box-shadow:var(--shadow);text-align:center;border:1px solid var(--line);margin-bottom:40px}
+.admission-status .badge{display:inline-block;padding:8px 20px;border-radius:999px;font-weight:600;font-size:.9rem;margin-bottom:16px}
+.admission-status .badge.open{background:#dcfce7;color:#15803d}
+.admission-status .badge.closed{background:#fee2e2;color:#b91c1c}
+.admission-dates{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
+.admission-dates .dt{background:var(--cream);padding:18px;border-radius:12px}
+.admission-dates .dt strong{display:block;color:var(--rose-dk);margin-bottom:4px;font-size:.85rem;text-transform:uppercase;letter-spacing:1px}
+.admission-dates .dt span{font-size:1.1rem;font-weight:600}
+
+/* NOTICES PAGE */
+.notice-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px;justify-content:center}
+.notice-filters button{background:#fff;border:1px solid var(--line);padding:8px 18px;border-radius:999px;cursor:pointer;font-family:inherit;font-size:.88rem;transition:all .2s}
+.notice-filters button.active{background:var(--rose);color:#fff;border-color:var(--rose)}
+.notice-list{display:flex;flex-direction:column;gap:14px;max-width:900px;margin:0 auto}
+.notice-row{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 24px;display:flex;gap:20px;align-items:center;transition:all .2s}
+.notice-row:hover{box-shadow:var(--shadow);border-color:var(--gold)}
+.notice-date-box{flex-shrink:0;background:linear-gradient(135deg,var(--rose),var(--rose-dk));color:#fff;border-radius:12px;padding:12px 16px;text-align:center;min-width:80px}
+.notice-date-box .day{font-size:1.5rem;font-weight:700;line-height:1;font-family:'Playfair Display',serif}
+.notice-date-box .month{font-size:.75rem;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+.notice-content{flex:1;min-width:0}
+.notice-content .cat{display:inline-block;background:var(--cream);color:var(--rose-dk);padding:2px 10px;border-radius:999px;font-size:.72rem;font-weight:600;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.notice-content h4{font-family:'Poppins',sans-serif;font-size:1.05rem;color:var(--ink);margin-bottom:4px;font-weight:600}
+.notice-content p{color:var(--muted);font-size:.88rem}
+.notice-row .actions{display:flex;gap:8px;flex-shrink:0}
+
+/* GALLERY */
+.gallery-grid{columns:3;column-gap:14px}
+@media(max-width:900px){.gallery-grid{columns:2}}
+@media(max-width:520px){.gallery-grid{columns:1}}
+.gallery-grid .gitem{break-inside:avoid;margin-bottom:14px;border-radius:12px;overflow:hidden;cursor:pointer;position:relative;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.06);transition:transform .25s}
+.gallery-grid .gitem:hover{transform:scale(1.02)}
+.gallery-grid img{width:100%;height:auto;display:block}
+.gallery-empty{text-align:center;padding:60px 20px;color:var(--muted);font-size:1.1rem;background:#fff;border-radius:16px;border:2px dashed var(--line)}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;display:none;align-items:center;justify-content:center;padding:30px}
+.lightbox.show{display:flex}
+.lightbox img{max-width:90vw;max-height:88vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lightbox .close{position:absolute;top:20px;right:24px;background:rgba(255,255,255,.15);color:#fff;border:none;width:44px;height:44px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact-info .info-row{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start}
+.contact-info .info-row i{width:44px;height:44px;background:var(--cream);color:var(--rose);display:grid;place-items:center;border-radius:12px;font-size:1.1rem;flex-shrink:0}
+.contact-info h4{font-family:'Poppins',sans-serif;font-size:1rem;margin-bottom:4px;color:var(--ink);font-weight:600}
+.contact-info p{color:var(--muted);font-size:.92rem}
+.contact-form{background:#fff;border-radius:18px;padding:32px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+.field input,.field textarea,.field select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:.95rem;background:#fff;color:var(--ink);transition:border .2s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--rose)}
+.field textarea{min-height:110px;resize:vertical}
+
+/* ADMIN */
+.admin-login{max-width:440px;margin:60px auto;background:#fff;border-radius:20px;padding:40px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.admin-login h2{text-align:center;margin-bottom:8px}
+.admin-login p.sub{text-align:center;color:var(--muted);margin-bottom:30px;font-size:.92rem}
+.admin-shell{display:grid;grid-template-columns:240px 1fr;gap:30px;padding:30px 24px;max-width:1300px;margin:0 auto}
+.admin-side{background:#fff;border-radius:16px;padding:20px;border:1px solid var(--line);height:fit-content;position:sticky;top:90px}
+.admin-side .who{padding:14px;background:var(--cream);border-radius:12px;margin-bottom:14px;font-size:.85rem}
+.admin-side .who strong{display:block;color:var(--rose-dk);font-size:.9rem}
+.admin-tab{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:10px;cursor:pointer;color:var(--ink);font-size:.92rem;margin-bottom:4px;border:none;background:none;width:100%;text-align:left;font-family:inherit}
+.admin-tab:hover{background:var(--cream)}
+.admin-tab.active{background:linear-gradient(135deg,var(--rose),var(--rose-dk));color:#fff}
+.admin-tab i{width:18px}
+.admin-main{background:#fff;border-radius:16px;padding:32px;border:1px solid var(--line);min-height:500px}
+.admin-main h2{margin-bottom:6px}
+.admin-main .sub{color:var(--muted);margin-bottom:24px;font-size:.92rem}
+.admin-card{background:var(--cream);padding:20px;border-radius:12px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.admin-card-info{flex:1;min-width:0}
+.admin-card-info h5{font-family:'Poppins',sans-serif;color:var(--ink);font-size:1rem;font-weight:600;margin-bottom:4px}
+.admin-card-info p{color:var(--muted);font-size:.85rem}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;padding:16px;background:var(--cream);border-radius:12px;margin-bottom:16px}
+.switch{position:relative;width:50px;height:28px;background:#ccc;border-radius:14px;cursor:pointer;transition:background .2s}
+.switch.on{background:var(--rose)}
+.switch::after{content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;background:#fff;border-radius:50%;transition:left .2s}
+.switch.on::after{left:25px}
+.cat-chip{display:inline-flex;align-items:center;gap:6px;background:var(--cream);padding:6px 12px;border-radius:999px;font-size:.85rem;margin:4px}
+.cat-chip button{background:none;border:none;color:var(--rose-dk);cursor:pointer;font-size:.9rem}
+
+/* MODAL */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:999;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.show{display:flex}
+.modal-box{background:#fff;border-radius:18px;padding:30px;max-width:520px;width:100%;max-height:90vh;overflow-y:auto}
+.modal-box h3{margin-bottom:20px}
+
+/* TOAST */
+.toast{position:fixed;bottom:30px;right:30px;background:var(--ink);color:#fff;padding:14px 22px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.3);z-index:2000;display:none;animation:slideUp .3s ease}
+.toast.show{display:block}
+.toast.success{background:#15803d}
+.toast.error{background:#b91c1c}
+@keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hamburger{display:block}
+  .nav-links{position:fixed;top:70px;left:0;right:0;background:#fff;flex-direction:column;padding:20px;border-bottom:1px solid var(--line);display:none;align-items:stretch;gap:4px}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 16px}
+  .director-card{grid-template-columns:1fr;text-align:center;padding:30px 24px}
+  .director-photo,.director-photo-fallback{margin:0 auto;width:220px;height:260px}
+  .director-body p.message{text-align:left}
+  .about-grid,.contact-grid,.foot-grid{grid-template-columns:1fr}
+  .admin-shell{grid-template-columns:1fr;padding:20px 16px}
+  .admin-side{position:static}
+  .ticker-wrap{flex-direction:column;align-items:stretch;gap:14px}
+  .hero-logo{top:84px;left:16px;width:72px;height:72px}
+  .hero-logo img{width:58px;height:58px}
+  .admission-dates{grid-template-columns:1fr}
+  .notice-row{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand" onclick="go('home')" style="cursor:pointer">
+      <img src="/__l5e/assets-v1/17dc6215-afc2-4407-82be-af0f05baaf20/logo.png" alt="MCMM Logo">
+      <div class="brand-text">
+        <strong>Maa Chandrika</strong>
+        <span>MAHILA MAHAVIDYALAYA • MAHOBA</span>
+      </div>
+    </div>
+    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><i class="fa-solid fa-bars"></i></button>
+    <div class="nav-links" id="navLinks">
+      <a data-nav="home" onclick="go('home')">Home</a>
+      <a data-nav="about" onclick="go('about')">About</a>
+      <a data-nav="courses" onclick="go('courses')">Courses</a>
+      <a data-nav="admission" onclick="go('admission')">Admission</a>
+      <a data-nav="notices" onclick="go('notices')">Notices</a>
+      <a data-nav="gallery" onclick="go('gallery')">Gallery</a>
+      <a data-nav="contact" onclick="go('contact')">Contact</a>
+      <a class="nav-cta" onclick="go('admin')">Admin</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide active" style="background-image:url('/__l5e/assets-v1/b221fa59-576c-419d-ba49-123e4d0ec506/home1.jpeg')"></div>
+      <div class="hero-slide" style="background-image:url('/__l5e/assets-v1/f7842e91-4557-4a9c-ad8d-79b5f578f611/home2.jpeg')"></div>
+      <div class="hero-slide" style="background-image:url('/__l5e/assets-v1/e0fea1f5-849f-4c2a-847f-e0a3892b15c7/home3.jpeg')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-logo"><img src="/__l5e/assets-v1/17dc6215-afc2-4407-82be-af0f05baaf20/logo.png" alt="Logo"></div>
+    <div class="hero-content">
+      <div class="hero-tag"><i class="fa-solid fa-venus"></i> A Private Women's College • Estd. for Her Future</div>
+      <h1>Maa Chandrika Mahila <em>Mahavidyalaya</em></h1>
+      <p class="lead">A nurturing campus in Mahoba where young women discover knowledge, confidence and purpose — guided by experienced faculty and rooted in values.</p>
+      <div class="hero-actions">
+        <button class="btn btn-gold" onclick="go('admission')"><i class="fa-solid fa-graduation-cap"></i> Apply for Admission</button>
+        <button class="btn btn-outline" onclick="go('courses')">Explore Courses</button>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span>Trusted by 1,500+ students & families</span>
+      </div>
+    </div>
+    <div class="hero-dots" id="heroDots">
+      <button class="active" onclick="setSlide(0)"></button>
+      <button onclick="setSlide(1)"></button>
+      <button onclick="setSlide(2)"></button>
+    </div>
+  </section>
+
+  <!-- DIRECTOR'S MESSAGE -->
+  <section class="block director">
+    <div class="container">
+      <div class="block-head">
+        <div class="eyebrow">A Word From Our Leadership</div>
+        <h2>Director's Message</h2>
+      </div>
+      <div class="director-card">
+        <div id="directorPhotoSlot"></div>
+        <div class="director-body">
+          <h3id="directorName">Dr. Sunita Sharma</h3>
+          <div class="designation" id="directorDesignation">Director, Maa Chandrika Mahila Mahavidyalaya</div>
+          <p class="message" id="directorMessage">At Maa Chandrika, we believe every young woman carries within her the spark to transform her family, her community and her nation. Our mission is to nurture that spark with quality education, strong values and a safe, supportive campus where she is free to dream and to do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section class="block courses">
+    <div class="container">
+      <div class="block-head">
+        <div class="eyebrow">Programs Offered</div>
+        <h2>Courses Designed for Her Growth</h2>
+        <p>Four flagship programs that combine academic depth with practical strength.</p>
+      </div>
+      <div class="course-grid">
+        <div class="course-card">
+          <div class="course-icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>B.A.</h3>
+          <div class="course-sub">Bachelor of Arts</div>
+          <p>A three-year undergraduate program in humanities and social sciences with multiple subject combinations.</p>
+        </div>
+        <div class="course-card">
+          <div class="course-icon"><i class="fa-solid fa-flask"></i></div>
+          <h3>B.Sc.</h3>
+          <div class="course-sub">Maths & Bio groups</div>
+          <p>Three-year science degree with dedicated streams in Mathematics and Biology — taught with lab practice.</p>
+        </div>
+        <div class="course-card">
+          <div class="course-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+          <h3>M.A.</h3>
+          <div class="course-sub">Hindi • English • History • Sociology</div>
+          <p>Two-year postgraduate program with four specializations and research-oriented teaching.</p>
+        </div>
+        <div class="course-card">
+          <div class="course-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <h3>D.El.Ed. (BTC)</h3>
+          <div class="course-sub">Diploma in Elementary Education</div>
+          <p>Two-year teacher-training diploma preparing young women for primary school teaching careers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTICE TICKER -->
+  <section class="ticker-block">
+    <div class="ticker-wrap">
+      <div class="ticker-label"><i class="fa-solid fa-bullhorn"></i> Latest Notices</div>
+      <div class="ticker-track"><div class="ticker-strip" id="tickerStrip"></div></div>
+      <button class="btn btn-gold ticker-cta" onclick="go('notices')">View All Notices <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="block features">
+    <div class="container">
+      <div class="block-head">
+        <div class="eyebrow">Why MCMM</div>
+        <h2>A Campus Built Around Her</h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature"><i class="fa-solid fa-shield-heart"></i><h4>Safe & Caring</h4><p>A women-only campus with vigilant staff and a protective environment.</p></div>
+        <div class="feature"><i class="fa-solid fa-tree"></i><h4>Green Campus</h4><p>Spacious grounds and shaded gardens that make learning a joy.</p></div>
+        <div class="feature"><i class="fa-solid fa-user-graduate"></i><h4>Experienced Faculty</h4><p>Dedicated teachers who mentor every student personally.</p></div>
+        <div class="feature"><i class="fa-solid fa-hand-holding-heart"></i><h4>Affordable Fees</h4><p>Quality higher education within reach of every family.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Ready to begin her journey?</h2>
+    <p>Admissions are warmly open. Visit us or apply today.</p>
+    <button class="btn btn-gold" onclick="go('admission')">Start Application <i class="fa-solid fa-arrow-right"></i></button>
+  </div>
+</div>
+
+<!-- ABOUT PAGE -->
+<div id="page-about" class="page">
+  <div class="page-hero"><h1>About Our College</h1><p>A private women's institution rooted in tradition, shaped for tomorrow.</p></div>
+  <section class="block">
+    <div class="container about-grid">
+      <img src="/__l5e/assets-v1/f7842e91-4557-4a9c-ad8d-79b5f578f611/home2.jpeg" alt="MCMM Campus">
+      <div>
+        <div class="eyebrow">Our Story</div>
+        <h2 style="margin-bottom:20px">Knowledge. Confidence. Character.</h2>
+        <p style="margin-bottom:14px;color:var(--muted)">Maa Chandrika Mahila Mahavidyalaya is a private women's college on Chhatarpur Road, Mahoba (U.P.), founded with a single conviction — that a young woman's education changes the destiny of a family, a village, and a generation.</p>
+        <p style="color:var(--muted)">From a quiet beginning we have grown into a trusted institution offering undergraduate, postgraduate and teacher-training programs. Our faculty mentor every student personally, and our campus is designed to be a calm, safe and uplifting space for learning.</p>
+        <div class="stat-row">
+          <div class="stat"><div class="num">1,500+</div><div class="lbl">Students</div></div>
+          <div class="stat"><div class="num">40+</div><div class="lbl">Faculty</div></div>
+          <div class="stat"><div class="num">4</div><div class="lbl">Programs</div></div>
+          <div class="stat"><div class="num">15+</div><div class="lbl">Years of Service</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- COURSES PAGE -->
+<div id="page-courses" class="page">
+  <div class="page-hero"><h1>Programs Offered</h1><p>Choose the path that fits her ambition.</p></div>
+  <section class="block">
+    <div class="container">
+      <div class="course-grid">
+        <div class="course-card"><div class="course-icon"><i class="fa-solid fa-book-open"></i></div><h3>B.A.</h3><div class="course-sub">Bachelor of Arts</div><p>Three-year undergraduate degree with humanities and social science subjects.</p></div>
+        <div class="course-card"><div class="course-icon"><i class="fa-solid fa-flask"></i></div><h3>B.Sc.</h3><div class="course-sub">Maths & Bio groups</div><p>Three-year science degree with dedicated Maths and Biology streams.</p></div>
+        <div class="course-card"><div class="course-icon"><i class="fa-solid fa-feather-pointed"></i></div><h3>M.A.</h3><div class="course-sub">Hindi • English • History • Sociology</div><p>Two-year postgraduate program with four specializations.</p></div>
+        <div class="course-card"><div class="course-icon"><i class="fa-solid fa-chalkboard-user"></i></div><h3>D.El.Ed. (BTC)</h3><div class="course-sub">Diploma in Elementary Education</div><p>Two-year teacher-training diploma for primary school careers.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ADMISSION -->
+<div id="page-admission" class="page">
+  <div class="page-hero"><h1>Admissions</h1><p>Begin her journey with us.</p></div>
+  <section class="block">
+    <div class="container" style="max-width:780px">
+      <div class="admission-status">
+        <div class="badge" id="admBadge">Admissions Open</div>
+        <h2 style="font-size:1.6rem">Session 2025-26</h2>
+        <p style="color:var(--muted);margin-top:8px">We welcome applications for all our programs.</p>
+        <div class="admission-dates">
+          <div class="dt"><strong>Opens On</strong><span id="admOpen">—</span></div>
+          <div class="dt"><strong>Closes On</strong><span id="admClose">—</span></div>
+        </div>
+        <button class="btn btn-primary" style="margin-top:24px" onclick="go('contact')"><i class="fa-solid fa-paper-plane"></i> Contact Office</button>
+      </div>
+      <div style="background:#fff;border-radius:18px;padding:30px;border:1px solid var(--line)">
+        <h3 style="margin-bottom:14px">How to Apply</h3>
+        <ol style="padding-left:20px;color:var(--muted);line-height:2">
+          <li>Visit the college office during working hours (Mon–Sat, 9 AM–4 PM).</li>
+          <li>Collect and fill the admission form.</li>
+          <li>Submit with mark-sheets, ID proof, and recent photographs.</li>
+          <li>Pay the program fee at the office counter.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- NOTICES -->
+<div id="page-notices" class="page">
+  <div class="page-hero"><h1>Notices & Information</h1><p>Updates from the college office.</p></div>
+  <section class="block">
+    <div class="container">
+      <div class="notice-filters" id="noticeFilters"></div>
+      <div class="notice-list" id="noticeList"></div>
+    </div>
+  </section>
+</div>
+
+<!-- GALLERY -->
+<div id="page-gallery" class="page">
+  <div class="page-hero"><h1>Campus Gallery</h1><p>Moments from our campus life.</p></div>
+  <section class="block">
+    <div class="container">
+      <div id="galleryContainer"></div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div id="page-contact" class="page">
+  <div class="page-hero"><h1>Contact Us</h1><p>We'd love to hear from you.</p></div>
+  <section class="block">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <div class="info-row"><i class="fa-solid fa-location-dot"></i><div><h4>Address</h4><p>Chhatarpur Road, Mahoba (U.P.) — 210427</p></div></div>
+        <div class="info-row"><i class="fa-solid fa-phone"></i><div><h4>Phone</h4><p>+91 98765 43210</p></div></div>
+        <div class="info-row"><i class="fa-solid fa-envelope"></i><div><h4>Email</h4><p>info@mcmm.edu.in</p></div></div>
+        <div class="info-row"><i class="fa-solid fa-clock"></i><div><h4>Office Hours</h4><p>Mon–Sat, 9:00 AM – 4:00 PM</p></div></div>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault();toast('Message sent — we will reply soon.','success');this.reset()">
+        <h3 style="margin-bottom:18px">Send a Message</h3>
+        <div class="field"><label>Your Name</label><input required maxlength="80"></div>
+        <div class="field"><label>Email</label><input type="email" required maxlength="120"></div>
+        <div class="field"><label>Message</label><textarea required maxlength="800"></textarea></div>
+        <button class="btn btn-primary" type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- ADMIN PAGE -->
+<div id="page-admin" class="page">
+  <div id="adminGate"></div>
+  <div id="adminPanel" style="display:none"></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="/__l5e/assets-v1/17dc6215-afc2-4407-82be-af0f05baaf20/logo.png" alt="">
+          <div><h5 style="margin:0">Maa Chandrika Mahila Mahavidyalaya</h5><div style="font-size:.85rem;color:#8a7682">Chhatarpur Road, Mahoba (U.P.)</div></div>
+        </div>
+        <p style="font-size:.9rem">A private women's college nurturing knowledge, confidence and character — the foundations of a fuller life.</p>
+      </div>
+      <div><h5>Explore</h5><ul>
+        <li><a onclick="go('about')">About</a></li>
+        <li><a onclick="go('courses')">Courses</a></li>
+        <li><a onclick="go('admission')">Admission</a></li>
+        <li><a onclick="go('gallery')">Gallery</a></li>
+      </ul></div>
+      <div><h5>Information</h5><ul>
+        <li><a onclick="go('notices')">Notices</a></li>
+        <li><a onclick="go('contact')">Contact</a></li>
+        <li><a onclick="go('admin')">Admin Portal</a></li>
+      </ul></div>
+      <div><h5>Reach Us</h5><ul>
+        <li><i class="fa-solid fa-phone"></i> +91 98765 43210</li>
+        <li><i class="fa-solid fa-envelope"></i> info@mcmm.edu.in</li>
+        <li><i class="fa-solid fa-location-dot"></i> Mahoba, U.P.</li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">© <span id="yr"></span> Maa Chandrika Mahila Mahavidyalaya. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="this.classList.remove('show')">
+  <button class="close" onclick="document.getElementById('lightbox').classList.remove('show')"><i class="fa-solid fa-xmark"></i></button>
+  <img id="lbImg" alt="">
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal"><div class="modal-box" id="modalBox"></div></div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============== STORAGE & DEFAULTS ============== */
+const LS = {
+  CRED:'mcmm_cred',
+  DIR:'mcmm_director',
+  ADM:'mcmm_admission',
+  NOT:'mcmm_notices',
+  CAT:'mcmm_categories',
+  GAL:'mcmm_gallery',
+  AUTH:'mcmm_auth'
+};
+const DEFAULTS = {
+  cred:{email:'admin@mcmm.edu.in',password:'MCMM@2024'},
+  director:{name:'Dr. Sunita Sharma',designation:'Director, Maa Chandrika Mahila Mahavidyalaya',message:"At Maa Chandrika, we believe every young woman carries within her the spark to transform her family, her community and her nation. Our mission is to nurture that spark with quality education, strong values and a safe, supportive campus where she is free to dream and to do.",photo:''},
+  admission:{open:true,opens:'2025-06-15',closes:'2025-08-31'},
+  notices:[
+    {id:1,title:'Admissions open for 2025-26 session',date:'2025-06-15',category:'Admission',description:'Application forms are now available at the college office for all programs.',pdf:''},
+    {id:2,title:'Orientation programme for B.A. first year',date:'2025-07-05',category:'Event',description:'All new B.A. students must attend the orientation programme.',pdf:''},
+    {id:3,title:'Semester examination time-table released',date:'2025-07-12',category:'Examination',description:'Time-table for the upcoming semester examinations is now available.',pdf:''},
+    {id:4,title:'Annual cultural day — Saraswati Utsav',date:'2025-07-20',category:'Event',description:'Annual cultural celebration with performances and prize distribution.',pdf:''},
+    {id:5,title:'Scholarship forms — last date reminder',date:'2025-07-25',category:'Scholarship',description:'Students eligible for state scholarships must submit forms by month-end.',pdf:''}
+  ],
+  categories:['Admission','Examination','Event','Scholarship','General'],
+  gallery:[]
+};
+function load(k,fb){try{const v=localStorage.getItem(k);return v?JSON.parse(v):fb}catch(e){return fb}}
+function save(k,v){localStorage.setItem(k,JSON.stringify(v))}
+function getCred(){return load(LS.CRED,DEFAULTS.cred)}
+function getDirector(){return load(LS.DIR,DEFAULTS.director)}
+function getAdm(){return load(LS.ADM,DEFAULTS.admission)}
+function getNotices(){return load(LS.NOT,DEFAULTS.notices)}
+function getCats(){return load(LS.CAT,DEFAULTS.categories)}
+function getGallery(){return load(LS.GAL,DEFAULTS.gallery)}
+
+/* ============== NAV / ROUTING ============== */
+function go(p){
+  document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===p));
+  document.getElementById('navLinks').classList.remove('open');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(p==='notices')renderNotices();
+  if(p==='gallery')renderGallery();
+  if(p==='admission')renderAdmission();
+  if(p==='admin')renderAdmin();
+  if(p==='home'){renderDirector();renderTicker();}
+}
+
+/* ============== HERO SLIDER ============== */
+let slideIdx=0;
+function setSlide(i){
+  const slides=document.querySelectorAll('#heroSlides .hero-slide');
+  const dots=document.querySelectorAll('#heroDots button');
+  slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+  dots.forEach((d,k)=>d.classList.toggle('active',k===i));
+  slideIdx=i;
+}
+setInterval(()=>setSlide((slideIdx+1)%3),4000);
+
+/* ============== DIRECTOR ============== */
+function renderDirector(){
+  const d=getDirector();
+  document.getElementById('directorName').textContent=d.name;
+  document.getElementById('directorDesignation').textContent=d.designation;
+  document.getElementById('directorMessage').textContent=d.message;
+  const slot=document.getElementById('directorPhotoSlot');
+  slot.innerHTML=d.photo
+    ? `<img class="director-photo" src="${d.photo}" alt="${escapeHtml(d.name)}">`
+    : `<div class="director-photo-fallback"><i class="fa-solid fa-user-tie"></i></div>`;
+}
+
+/* ============== TICKER ============== */
+function renderTicker(){
+  const list=getNotices().slice(0,5);
+  const html=list.map(n=>`<span class="ticker-item"><span class="date">${fmtDate(n.date)}</span> <i class="fa-solid fa-circle" style="font-size:5px;opacity:.5"></i> ${escapeHtml(n.title)}</span>`).join('');
+  document.getElementById('tickerStrip').innerHTML=html+html;
+}
+
+/* ============== ADMISSION PAGE ============== */
+function renderAdmission(){
+  const a=getAdm();
+  const b=document.getElementById('admBadge');
+  b.textContent=a.open?'Admissions Open':'Admissions Closed';
+  b.className='badge '+(a.open?'open':'closed');
+  document.getElementById('admOpen').textContent=a.opens?fmtDate(a.opens):'—';
+  document.getElementById('admClose').textContent=a.closes?fmtDate(a.closes):'—';
+}
+
+/* ============== NOTICES PAGE ============== */
+let activeNoticeCat='All';
+function renderNotices(){
+  const cats=['All',...getCats()];
+  const notices=getNotices();
+  document.getElementById('noticeFilters').innerHTML=cats.map(c=>`<button class="${c===activeNoticeCat?'active':''}" onclick="activeNoticeCat='${c}';renderNotices()">${c}</button>`).join('');
+  const filtered=activeNoticeCat==='All'?notices:notices.filter(n=>n.category===activeNoticeCat);
+  if(!filtered.length){document.getElementById('noticeList').innerHTML='<p style="text-align:center;color:var(--muted)">No notices in this category.</p>';return}
+  document.getElementById('noticeList').innerHTML=filtered.map(n=>{
+    const d=new Date(n.date);
+    return `<div class="notice-row">
+      <div class="notice-date-box"><div class="day">${d.getDate()}</div><div class="month">${d.toLocaleString('en',{month:'short'})}</div></div>
+      <div class="notice-content">
+        <span class="cat">${escapeHtml(n.category)}</span>
+        <h4>${escapeHtml(n.title)}</h4>
+        <p>${escapeHtml(n.description||'')}</p>
+      </div>
+      <div class="actions">${n.pdf?`<a class="btn btn-ghost btn-sm" href="${n.pdf}" download="${escapeHtml(n.title)}.pdf"><i class="fa-solid fa-download"></i> PDF</a>`:''}</div>
+    </div>`;
+  }).join('');
+}
+
+/* ============== GALLERY ============== */
+function renderGallery(){
+  const g=getGallery();
+  const c=document.getElementById('galleryContainer');
+  if(!g.length){c.innerHTML='<div class="gallery-empty"><i class="fa-regular fa-image" style="font-size:2.5rem;color:var(--rose);margin-bottom:14px;display:block"></i>No photos uploaded yet.</div>';return}
+  c.innerHTML='<div class="gallery-grid">'+g.map((p,i)=>`<div class="gitem" onclick="openLightbox('${p}')"><img src="${p}" alt="Gallery ${i+1}" loading="lazy"></div>`).join('')+'</div>';
+}
+function openLightbox(src){document.getElementById('lbImg').src=src;document.getElementById('lightbox').classList.add('show')}
+
+/* ============== ADMIN ============== */
+let adminTab='director';
+function isAuthed(){return sessionStorage.getItem(LS.AUTH)==='1'}
+function renderAdmin(){
+  if(!isAuthed()){renderLogin();document.getElementById('adminPanel').style.display='none';document.getElementById('adminGate').style.display='block';return}
+  document.getElementById('adminGate').style.display='none';
+  const panel=document.getElementById('adminPanel');
+  panel.style.display='block';
+  const cred=getCred();
+  panel.innerHTML=`<div class="admin-shell">
+    <aside class="admin-side">
+      <div class="who"><strong>Signed in</strong>${escapeHtml(cred.email)}</div>
+      ${[['director','Director Message','user-tie'],['admission','Admission Settings','clipboard-check'],['notices','Notice Manager','bell'],['gallery','Gallery Manager','images'],['settings','Settings','gear']].map(([k,l,i])=>`<button class="admin-tab ${k===adminTab?'active':''}" onclick="adminTab='${k}';renderAdmin()"><i class="fa-solid fa-${i}"></i> ${l}</button>`).join('')}
+      <button class="admin-tab" onclick="logoutAdmin()" style="color:#b91c1c"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+    </aside>
+    <main class="admin-main" id="adminMain"></main>
+  </div>`;
+  renderAdminTab();
+}
+function renderLogin(){
+  document.getElementById('adminGate').innerHTML=`<div class="admin-login">
+    <h2>Admin Portal</h2><p class="sub">Sign in to manage college content</p>
+    <form onsubmit="event.preventDefault();tryLogin(this)">
+      <div class="field"><label>Email</label><input name="email" type="email" required></div>
+      <div class="field"><label>Password</label><input name="password" type="password" required></div>
+      <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center"><i class="fa-solid fa-right-to-bracket"></i> Sign In</button>
+    </form>
+  </div>`;
+}
+function tryLogin(f){
+  const c=getCred();
+  if(f.email.value.trim()===c.email && f.password.value===c.password){sessionStorage.setItem(LS.AUTH,'1');renderAdmin();toast('Welcome back, Admin','success')}
+  else toast('Incorrect email or password','error');
+}
+function logoutAdmin(){sessionStorage.removeItem(LS.AUTH);renderAdmin();toast('Signed out','success')}
+
+function renderAdminTab(){
+  const m=document.getElementById('adminMain');
+  if(adminTab==='director'){
+    const d=getDirector();
+    m.innerHTML=`<h2>Director's Message</h2><p class="sub">Edit name, designation, message and photo — saved live to the homepage.</p>
+      <form onsubmit="event.preventDefault();saveDirector(this)">
+        <div class="field"><label>Director Name</label><input name="name" required value="${escapeHtml(d.name)}"></div>
+        <div class="field"><label>Designation</label><input name="designation" required value="${escapeHtml(d.designation)}"></div>
+        <div class="field"><label>Message</label><textarea name="message" required>${escapeHtml(d.message)}</textarea></div>
+        <div class="field"><label>Photo</label><input type="file" accept="image/*" onchange="filePreview(this,'dirPrev')"><div id="dirPrev" style="margin-top:10px">${d.photo?`<img src="${d.photo}" style="width:120px;height:140px;object-fit:cover;border-radius:10px">`:''}</div></div>
+        <button class="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+        ${d.photo?'<button type="button" class="btn btn-ghost" onclick="clearDirPhoto()" style="margin-left:10px">Remove Photo</button>':''}
+      </form>`;
+  } else if(adminTab==='admission'){
+    const a=getAdm();
+    m.innerHTML=`<h2>Admission Settings</h2><p class="sub">Toggle status and set dates shown on the Admission page.</p>
+      <div class="toggle-row"><div><strong>Admissions ${a.open?'Open':'Closed'}</strong><p style="font-size:.85rem;color:var(--muted)">Public banner reflects this state</p></div><div class="switch ${a.open?'on':''}" onclick="toggleAdm()"></div></div>
+      <form onsubmit="event.preventDefault();saveAdmDates(this)">
+        <div class="field"><label>Opens On</label><input type="date" name="opens" value="${a.opens||''}"></div>
+        <div class="field"><label>Closes On</label><input type="date" name="closes" value="${a.closes||''}"></div>
+        <button class="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save Dates</button>
+      </form>`;
+  } else if(adminTab==='notices'){
+    const ns=getNotices(), cats=getCats();
+    m.innerHTML=`<h2>Notice Manager</h2><p class="sub">Add, edit and delete notices and categories.</p>
+      <div style="margin-bottom:20px"><button class="btn btn-primary" onclick="openNoticeModal()"><i class="fa-solid fa-plus"></i> Add Notice</button></div>
+      <h4 style="margin-bottom:10px;font-family:Poppins;font-weight:600">Categories</h4>
+      <div style="margin-bottom:14px">${cats.map(c=>`<span class="cat-chip">${escapeHtml(c)} <button onclick="delCat('${c}')" title="Delete"><i class="fa-solid fa-xmark"></i></button></span>`).join('')}</div>
+      <form style="display:flex;gap:8px;margin-bottom:24px" onsubmit="event.preventDefault();addCat(this)">
+        <input name="cat" required placeholder="New category name" style="flex:1;padding:10px;border:1px solid var(--line);border-radius:10px">
+        <button class="btn btn-ghost" type="submit"><i class="fa-solid fa-plus"></i> Add</button>
+      </form>
+      <h4 style="margin-bottom:10px;font-family:Poppins;font-weight:600">All Notices (${ns.length})</h4>
+      ${ns.map(n=>`<div class="admin-card">
+        <div class="admin-card-info"><h5>${escapeHtml(n.title)}</h5><p>${fmtDate(n.date)} • ${escapeHtml(n.category)}${n.pdf?' • <i class="fa-solid fa-file-pdf"></i> PDF':''}</p></div>
+        <div style="display:flex;gap:6px"><button class="btn btn-ghost btn-sm" onclick="openNoticeModal(${n.id})"><i class="fa-solid fa-pen"></i></button><button class="btn btn-danger btn-sm" onclick="delNotice(${n.id})"><i class="fa-solid fa-trash"></i></button></div>
+      </div>`).join('')||'<p style="color:var(--muted)">No notices yet.</p>'}`;
+  } else if(adminTab==='gallery'){
+    const g=getGallery();
+    m.innerHTML=`<h2>Gallery Manager</h2><p class="sub">Upload campus photos that appear in the public gallery.</p>
+      <div class="field"><label>Upload Photos (multiple allowed)</label><input type="file" multiple accept="image/*" onchange="addPhotos(this)"></div>
+      <h4 style="margin:20px 0 10px;font-family:Poppins;font-weight:600">Photos (${g.length})</h4>
+      ${g.length?`<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px">${g.map((p,i)=>`<div style="position:relative;border-radius:10px;overflow:hidden"><img src="${p}" style="width:100%;height:140px;object-fit:cover"><button class="btn btn-danger btn-sm" onclick="delPhoto(${i})" style="position:absolute;top:6px;right:6px;padding:4px 8px"><i class="fa-solid fa-trash"></i></button></div>`).join('')}</div>`:'<p style="color:var(--muted)">No photos yet.</p>'}`;
+  } else if(adminTab==='settings'){
+    const c=getCred();
+    m.innerHTML=`<h2>Settings</h2><p class="sub">Update admin email and/or password. Current password required.</p>
+      <form onsubmit="event.preventDefault();saveCred(this)" style="max-width:480px">
+        <div class="field"><label>Current Password</label><input type="password" name="current" required></div>
+        <hr style="margin:20px 0;border:none;border-top:1px solid var(--line)">
+        <div class="field"><label>New Email</label><input type="email" name="email" required value="${escapeHtml(c.email)}"></div>
+        <div class="field"><label>New Password (leave blank to keep)</label><input type="password" name="password" placeholder="Enter new password to change"></div>
+        <button class="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Update Credentials</button>
+      </form>`;
+  }
+}
+
+/* Director ops */
+function saveDirector(f){
+  const d=getDirector();
+  d.name=f.name.value.trim();d.designation=f.designation.value.trim();d.message=f.message.value.trim();
+  const file=f.querySelector('input[type=file]').files[0];
+  if(file){toBase64(file).then(b64=>{d.photo=b64;save(LS.DIR,d);toast('Director message saved','success');renderDirector();renderAdminTab()})}
+  else{save(LS.DIR,d);toast('Director message saved','success');renderDirector()}
+}
+function clearDirPhoto(){const d=getDirector();d.photo='';save(LS.DIR,d);renderDirector();renderAdminTab();toast('Photo removed','success')}
+function filePreview(input,id){const f=input.files[0];if(!f)return;toBase64(f).then(b64=>{document.getElementById(id).innerHTML=`<img src="${b64}" style="width:120px;height:140px;object-fit:cover;border-radius:10px">`})}
+
+/* Admission ops */
+function toggleAdm(){const a=getAdm();a.open=!a.open;save(LS.ADM,a);renderAdminTab();renderAdmission()}
+function saveAdmDates(f){const a=getAdm();a.opens=f.opens.value;a.closes=f.closes.value;save(LS.ADM,a);toast('Admission dates saved','success');renderAdmission()}
+
+/* Notice ops */
+function openNoticeModal(id){
+  const ns=getNotices(),cats=getCats();
+  const n=id?ns.find(x=>x.id===id):{id:'',title:'',date:new Date().toISOString().slice(0,10),category:cats[0]||'General',description:'',pdf:''};
+  document.getElementById('modalBox').innerHTML=`<h3>${id?'Edit':'Add'} Notice</h3>
+    <form onsubmit="event.preventDefault();saveNotice(this,${id||'null'})">
+      <div class="field"><label>Title</label><input name="title" required maxlength="160" value="${escapeHtml(n.title)}"></div>
+      <div class="field"><label>Date</label><input type="date" name="date" required value="${n.date}"></div>
+      <div class="field"><label>Category</label><select name="category" required>${cats.map(c=>`<option ${c===n.category?'selected':''}>${escapeHtml(c)}</option>`).join('')}</select></div>
+      <div class="field"><label>Description</label><textarea name="description" maxlength="600">${escapeHtml(n.description||'')}</textarea></div>
+      <div class="field"><label>PDF (optional)</label><input type="file" accept="application/pdf" name="pdf">${n.pdf?'<p style="font-size:.8rem;color:var(--muted);margin-top:4px">Current PDF attached</p>':''}</div>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:10px"><button type="button" class="btn btn-ghost" onclick="closeModal()">Cancel</button><button class="btn btn-primary" type="submit">Save</button></div>
+    </form>`;
+  document.getElementById('modal').classList.add('show');
+}
+function closeModal(){document.getElementById('modal').classList.remove('show')}
+function saveNotice(f,id){
+  const ns=getNotices();
+  const data={title:f.title.value.trim(),date:f.date.value,category:f.category.value,description:f.description.value.trim()};
+  const file=f.pdf.files[0];
+  const finish=(pdf)=>{
+    if(id){const idx=ns.findIndex(x=>x.id===id);ns[idx]={...ns[idx],...data,pdf:pdf!==undefined?pdf:ns[idx].pdf}}
+    else{ns.unshift({id:Date.now(),...data,pdf:pdf||''})}
+    save(LS.NOT,ns);closeModal();toast('Notice saved','success');renderAdminTab();renderTicker();
+  };
+  if(file)toBase64(file).then(finish);else finish(undefined);
+}
+function delNotice(id){if(!confirm('Delete this notice?'))return;save(LS.NOT,getNotices().filter(n=>n.id!==id));toast('Notice deleted','success');renderAdminTab();renderTicker()}
+function addCat(f){const c=getCats();const v=f.cat.value.trim();if(!v)return;if(c.includes(v))return toast('Category exists','error');c.push(v);save(LS.CAT,c);f.reset();renderAdminTab()}
+function delCat(c){if(!confirm('Delete category "'+c+'"?'))return;save(LS.CAT,getCats().filter(x=>x!==c));renderAdminTab()}
+
+/* Gallery ops */
+function addPhotos(input){
+  const files=Array.from(input.files);if(!files.length)return;
+  Promise.all(files.map(toBase64)).then(arr=>{const g=getGallery();g.push(...arr);save(LS.GAL,g);toast(arr.length+' photo(s) added','success');renderAdminTab()});
+}
+function delPhoto(i){if(!confirm('Delete this photo?'))return;const g=getGallery();g.splice(i,1);save(LS.GAL,g);renderAdminTab()}
+
+/* Credentials */
+function saveCred(f){
+  const c=getCred();
+  if(f.current.value!==c.password)return toast('Current password is incorrect','error');
+  const newEmail=f.email.value.trim();
+  const newPass=f.password.value;
+  const updated={email:newEmail||c.email,password:newPass||c.password};
+  save(LS.CRED,updated);toast('Credentials updated','success');renderAdminTab();
+}
+
+/* ============== UTILS ============== */
+function toBase64(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(file)})}
+function fmtDate(s){if(!s)return '—';const d=new Date(s);return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})}
+function escapeHtml(s){return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+let toastTimer;
+function toast(msg,type){const t=document.getElementById('toast');t.textContent=msg;t.className='toast show '+(type||'');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3000)}
+
+/* ============== INIT ============== */
+document.getElementById('yr').textContent=new Date().getFullYear();
+renderDirector();renderTicker();
+window.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('lightbox').classList.remove('show');closeModal()}});
+</script>
+</body>
+</html>
