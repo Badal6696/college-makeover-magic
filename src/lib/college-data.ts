@@ -1,13 +1,13 @@
 // LocalStorage-backed data for the college site.
 // Safe in SSR: read returns defaults when window is unavailable.
 
-import home1 from "@/assets/home1.asset.json";
-import home2 from "@/assets/home2.asset.json";
-import home3 from "@/assets/home3.asset.json";
-import logoAsset from "@/assets/logo.asset.json";
+import home1 from "@/assets/home1.jpeg";
+import home2 from "@/assets/home2.jpeg";
+import home3 from "@/assets/home3.jpeg";
+import logoAsset from "@/assets/logo.png";
 
-export const HERO_IMAGES = [home1.url, home2.url, home3.url];
-export const LOGO_URL = logoAsset.url;
+export const HERO_IMAGES = [home1, home2, home3];
+export const LOGO_URL = logoAsset;
 
 export type Notice = {
   id: string;
